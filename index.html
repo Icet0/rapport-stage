@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 
@@ -13088,7 +13089,8 @@ div#notebook {
 <h1 id="PRESENTATION">PRESENTATION<a class="anchor-link" href="#PRESENTATION">&#182;</a></h1><h2 id="Sujet-du-stage">Sujet du stage<a class="anchor-link" href="#Sujet-du-stage">&#182;</a></h2><p><strong>L'objectif initial du stage est d'analyser des données de Scal'Air NC, obtenue grâce à une API développée qui vient scrapper le site web de Scal'Air. Le but du stage étant de produire un "data story telling" ainsi qu'un modèle de prédiction pouvant possiblement être exporté sur une API. Ce schéma de travail pourrait quant à lui servir de base pour toutes autre approches d'analyses de données sur de l'open Data lors d'innovation à l'OPT.</strong></p>
 <p><a href="https://sway.office.com/pQ4PEOhog4vQOe2l?ref=email">-Lien Sujet du stage</a></p>
 <p><a href="https://slides.com/monimpaul/deck-4c5e0d/fullscreen">-Lien Présentation reveal.js</a></p>
-<p><a href="https://github.com/Icet0/Rapport/blob/master/Rapport.ipynb">-Lien Rapport sur Git</a></p>
+<p><a href="https://github.com/Icet0/Rapport/blob/master/Rapport.ipynb">-Lien Rapport jupyterNoteBook sur Git</a></p>
+<p><a href="https://icet0.github.io/rapport-stage/">-Lien Rapport sur GitPages</a></p>
 
 </div>
 </div>
@@ -13457,7 +13459,7 @@ En testant la création d'un modèle sur orange et de son exportation, nous n'av
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Une fois ce Script Python lancé, il nous suffit d'ouvrir sur un navigateur le lien local host sur le port 5000 ainsi que les compléments d'URL et les paramètres pour obtenir une prédiction et le Json renvoyé par le programme. Mais le but ne s’arrête pas la, ce que nous voulons c'est que cette API tourne h24 et que quiconque puisse y avoir accès et par n'importe quel moyen. Pour cela, nous avons du déployer cette API dans le cloud via heroku, puis sur un market place grâce à Rapide Api. Et nous avons aussi tester de récupérer les données en Java.</p>
-<h3 id="Heroku-&amp;-RapidAPI">Heroku &amp; RapidAPI<a class="anchor-link" href="#Heroku-&amp;-RapidAPI">&#182;</a></h3><p>Heroku est donc une plateforme en ligne permettant d'héberger gratuitement des petites API. Pour publier la notre, à l'aide du CLI fournit par heroku sous linux, il nous à juste suffit de Dockeriser notre environnement et de créer un fichier requirement.txt qui indique toutes les dépendances de notre script python.
+<h3 id="Heroku-&amp;-RapidAPI">Heroku &amp; RapidAPI<a class="anchor-link" href="#Heroku-&amp;-RapidAPI">&#182;</a></h3><p>Heroku est donc une plateforme en ligne (une PAAS) permettant d'héberger gratuitement des API. Pour publier la notre, à l'aide du CLI fournit par heroku sous linux, il nous à juste suffit de Dockeriser notre environnement et de créer un fichier requirement.txt qui indique toutes les dépendances de notre script python.
 Une fois nos fichiers envoyé sur heroku, et après maintes phases de test, notre api était disponible via une URL publique. Le travail restant était juste de publier ce lien sur Rapide Api et de documenter un peu notre API en y montrant des exemples.
 Finalement, grâce à un programme java, nous arrivons à récupérer notre prédiction et cela de n'importe où. De plus Rapide Api propose des exemples de code pour l'utilisation de l'api.</p>
 
@@ -13710,6 +13712,15 @@ De plus les agences sont triées dans l'ordre croissant suivant leur temps d'att
 <p>Cette application contient aussi une partie 'prévision', reprenant le même principe que celui du site Web.
 Nous avons 3 'pageView' (3 pages avec une gestion de switch sur les cotés de l'écran pour passer d'une page à l'autre) avec sur chacune un formulaire dédié a la prédiction voulue (Endpoint). Le reste des Screenshots pourra être retrouver en <a href="#ScreenShots-Application-Mobile">annexe</a>.</p>
 <p><img src="Images/app/Screenshot_2019-12-12-07-58-14-672_com.example.apirequest.jpg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Ce stage a été très enrichissant pour moi car il m’a permis de découvrir dans le détail le monde de l'entreprise notament la méthode agile Scrum. De plus il m'a permis d'apprendre l'utilisation de nombreuses technologies comme évoqué dans le corps du rapport. Il m'a aussi permis de rencontrer des personnes travaillant dans le dommaines de l'informatique et de la programmation, ce qui m'a apporté une meilleure clairvoyance sur le métier que je voudrais exercer dans un futur proche. Ce stage m'a donc était très important, que ce soit pour la suite de mes études supérieurs ou pour ma future vie professionnelle.
+Il était question d'appliquer un cheminement d'utilisation de données open source, en passant par l'analyse de données, modèle prédictif, création d'api à l'utilisation de cette dernière dans un programme. Puis le sujet à était approfondi pour passer sur des données liées à l'opt et même sur la création d'un site web ainsi qu'une application mobile. Un cheminement complet accès sur l'utilisation du PAAS et du cloud, et surtout indépendant des structures interne à l'opt. Autrement dit ce stage aurait pu être fait par nimporte qui sur son canapé grâce à ses outils gratuit et cette donnée openSource.</p>
 
 </div>
 </div>
@@ -14251,10 +14262,11 @@ A contrario, la médiane nous montre aussi qu'à certaines horaires, il peut y a
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ScreenShots-Application-Mobile">ScreenShots Application Mobile<a class="anchor-link" href="#ScreenShots-Application-Mobile">&#182;</a></h2><h4 id="lien-partie-principale"><a href="#Cr&#233;ation-d'une-application-Mobile">lien partie principale</a><a class="anchor-link" href="#lien-partie-principale">&#182;</a></h4><p><img src="Images/app/Screenshot_2019-12-12-07-58-12-084_com.example.apirequest.jpg" alt="">
-<img src="Images/app/Screenshot_2019-12-12-07-58-20-908_com.example.apirequest.jpg" alt="">
-<img src="Images/app/Screenshot_2019-12-12-07-58-39-371_com.example.apirequest.jpg" alt="">
-<img src="Images/app/Screenshot_2019-12-12-07-58-59-142_com.example.apirequest.jpg" alt=""></p>
+<h2 id="ScreenShots-Application-Mobile">ScreenShots Application Mobile<a class="anchor-link" href="#ScreenShots-Application-Mobile">&#182;</a></h2><p><a href="#Création-d&#39;une-application-Mobile">lien partie principale</a></p>
+<p><img src="Images/app/Screenshot_2019-12-12-07-58-12-084_com.example.apirequest.jpg" alt=""></p>
+<p><img src="Images/app/Screenshot_2019-12-12-07-58-20-908_com.example.apirequest.jpg" alt=""></p>
+<p><img src="Images/app/Screenshot_2019-12-12-07-58-39-371_com.example.apirequest.jpg" alt=""></p>
+<p><img src="Images/app/Screenshot_2019-12-12-07-58-59-142_com.example.apirequest.jpg" alt=""></p>
 
 </div>
 </div>

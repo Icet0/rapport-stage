@@ -13077,6 +13077,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><center><h1>Rapport de Stage</h1><br/><h2>Analyse de donnée sur de l'Open Data</h2><br/><h3>Rédigé et réaliser par Paul Monimeau</h3></center>
+<br/><br/><br/></p>
+<p><h4>Sous la tutelle de Mr F.Flouvat (UNC) et de Mr A.SALES (OPT)<h4></p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="Images/prezzz_paul.png" alt=""></p>
 <hr>
 
@@ -13089,27 +13100,7 @@ div#notebook {
 <h1 id="INDEX">INDEX<a class="anchor-link" href="#INDEX">&#182;</a></h1><ol>
 <li><a href="#Sujet-du-stage">Sujet du stage</a></li>
 <li><a href="#Apprentissage-avec-OpenClassRooms-et-autres">Apprentissage avec OpenClassRooms et autres</a></li>
-<li><a href="#Première-analyses-des-données-de-Scal&#39;Air">Première analyses des données de Scal’Air</a><ol>
-<li><a href="#Comment-l&#39;indice-Atmo-est-il-calculé-?">Comment l’indice Atmo est-il calculé ?</a></li>
-<li><a href="#Premières-observations">Premières observations</a></li>
-<li><a href="#Modification-et-ajout-de-données">Modification et ajout de données</a></li>
-<li><a href="#Des-informations-plus-précises">Des informations plus précises</a></li>
-</ol>
-</li>
-<li><a href="#Premier-model-de-prédiction-avec-Orange">Premier model de prédiction avec Orange</a><ol>
-<li><a href="#Model-Tree">Model Tree</a></li>
-<li><a href="#Model-Logistic-Regression">Model Logistic Regression</a></li>
-</ol>
-</li>
-<li><a href="#Recuperation-de-la-donnée-à-l&#39;aide-d&#39;une-API-REST">Recuperation de la donnée à l’aide d’une API REST</a></li>
-<li><a href="#Suite-de-l&#39;Analyse-des-données-de-Scal&#39;Air">Suite de l’Analyse des données de Scal’Air</a><ol>
-<li><a href="#Toujours-plus-de-données">Toujours plus de données</a></li>
-</ol>
-</li>
-<li><a href="#Création-d&#39;un-API-REST">Création d'une API REST</a><ol>
-<li><a href="#Heroku-&amp;-RapidAPI">Heroku &amp; RapidAPI</a></li>
-</ol>
-</li>
+<li><a href="#Première-analyses-des-données-de-Scal&#39;Air">Première analyses des données de Scal’Air</a></li>
 <li><a href="#Un-tout-nouvel-horizon-et-de-nouvelles-données">Un tout nouvel horizon e de nouvelles données</a><ol>
 <li><a href="#L&#39;utilité-possible">L'utilité possible</a></li>
 <li><a href="#Récupération-de-la-donnée">Récupération de la donnée</a></li>
@@ -13131,7 +13122,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="PRESENTATION">PRESENTATION<a class="anchor-link" href="#PRESENTATION">&#182;</a></h1><h2 id="Sujet-du-stage">Sujet du stage<a class="anchor-link" href="#Sujet-du-stage">&#182;</a></h2><p><strong>L'objectif initial du stage est d'analyser des données de Scal'Air NC, obtenue grâce à une API développée qui vient scrapper le site web de Scal'Air. Le but du stage étant de produire un "data story telling" ainsi qu'un modèle de prédiction pouvant possiblement être exporté sur une API. Ce schéma de travail pourrait quant à lui servir de base pour toutes autre approches d'analyses de données sur de l'open Data lors d'innovation à l'OPT.</strong></p>
+<h1 id="PRESENTATION">PRESENTATION<a class="anchor-link" href="#PRESENTATION">&#182;</a></h1><h2 id="Sujet-du-stage">Sujet du stage<a class="anchor-link" href="#Sujet-du-stage">&#182;</a></h2><p><strong>L'objectif initial du stage est d'analyser des données de Scal'Air NC, obtenues grâce à une API développée qui vient scrapper le site web de Scal'Air. Le but du stage étant de produire un "data story telling" ainsi qu'un modèle de prédiction pouvant possiblement être exporté sur une API. Ce schéma de travail pourrait quant à lui servir de base pour toutes autre approches d'analyses de données sur de l'open Data lors d'innovations à l'OPT.</strong></p>
 <p><a href="https://sway.office.com/pQ4PEOhog4vQOe2l?ref=email">-Lien du Sujet du stage</a></p>
 <p><a href="https://slides.com/monimpaul/deck-4c5e0d/fullscreen">-Lien de la Présentation reveal.js</a></p>
 <p><a href="https://github.com/Icet0/Rapport/blob/master/Rapport.ipynb">-Lien du Rapport jupyterNoteBook sur Git</a></p>
@@ -13151,9 +13142,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Premi&#232;re-analyses-des-donn&#233;es-de-Scal'Air">Premi&#232;re analyses des donn&#233;es de Scal'Air<a class="anchor-link" href="#Premi&#232;re-analyses-des-donn&#233;es-de-Scal'Air">&#182;</a></h2><p>Ces données contiennent l'indice de qualité de l'air pour certains quartier de Nouméa et à des dates données. Cet indice est calculé au préalable par Scal'Air en fonction de la quantité des différentes molécules qui composent l'air. Cet indice est appelé <a href="https://www.futura-sciences.com/planete/questions-reponses/pollution-quest-ce-indice-atmo-4099/">indice ATMO</a></p>
-<h3 id="Comment-l'indice-Atmo-est-il-calcul&#233;-?">Comment l'indice Atmo est-il calcul&#233; ?<a class="anchor-link" href="#Comment-l'indice-Atmo-est-il-calcul&#233;-?">&#182;</a></h3><p><em>Les concentrations maximales horaires d'ozone, de dioxyde de soufre et de dioxyde d'azote, ainsi que les concentrations maximales journalières de particules fines, sont mesurées durant 24 heures. La moyenne de ces concentrations permet ensuite de déterminer les sous-indices des quatre polluants. À chaque sous-indice de polluant correspond une valeur d'indice Atmo. L'indice Atmo retenu est celui correspondant au plus élevé des quatre sous-indices de polluant atmosphérique. Il est possible de faire des prévisions concernant la qualité de l'air du lendemain.</em></p>
-<h3 id="Premi&#232;res-observations">Premi&#232;res observations<a class="anchor-link" href="#Premi&#232;res-observations">&#182;</a></h3>
+<h2 id="Premi&#232;re-analyses-des-donn&#233;es-de-Scal'Air">Premi&#232;re analyses des donn&#233;es de Scal'Air<a class="anchor-link" href="#Premi&#232;re-analyses-des-donn&#233;es-de-Scal'Air">&#182;</a></h2><p>Ces données contiennent l'indice de qualité de l'air pour certains quartiers de Nouméa et à des dates données. Cet indice est calculé au préalable par Scal'Air en fonction de la quantité des différentes molécules qui composent l'air. Cet indice est appelé <a href="https://www.futura-sciences.com/planete/questions-reponses/pollution-quest-ce-indice-atmo-4099/">indice ATMO</a></p>
+
 </div>
 </div>
 </div>
@@ -13177,7 +13167,8 @@ On voit ici un DataFrame crée par python.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Les premiers graphiques :</strong></p>
+<p>Les données de Scal'Air nous ont permises d'apprendre la méthodologie pour arriver à la publication d'une API prédictive.</p>
+<p><img src="Images/optPrez.png" alt=""></p>
 
 </div>
 </div>
@@ -13185,369 +13176,10 @@ On voit ici un DataFrame crée par python.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ces premiers graphiques, que l'on peut retrouver en <a href="#Graphiques,-Premières-analyses">annexe</a>, nous montre une visualisation de l'indice ATMO par date. On peut y voir une légère augmentation de ce dernier pour 2 des quartes quartier pour une date précise. Rien qu'avec cela on peut émettre hypothèse, notamment sur l'alignement de certains quartier ainsi que l'influence du vent sur l'indice ATMO de ces quartiers.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Modification-et-ajout-de-donn&#233;es">Modification et ajout de donn&#233;es<a class="anchor-link" href="#Modification-et-ajout-de-donn&#233;es">&#182;</a></h3><h4 id="Suppression-de-la-ligne-G&#233;n&#233;rale">Suppression de la ligne <strong><em>G&#233;n&#233;rale</em></strong><a class="anchor-link" href="#Suppression-de-la-ligne-G&#233;n&#233;rale">&#182;</a></h4><p><img src="Images/Quartier.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Day-of-The-Week">Day of The Week<a class="anchor-link" href="#Day-of-The-Week">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>En rajoutant les jours de la semaine, cela nous permet par la suite de classer les indices en fonctions des jours et peut-être trouver une corrélation entre ces derniers et l'indice de pollution. Par exemple, avec plus de données il se pourrait qu'on trouve un indice plus élevée le mardi si la SLN nettoie ses cheminées ( ceci est seulement un exemple imagé ).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Différente perception de la donnée :</strong></p>
-<p><img src="Images/DayOfTheWeek.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Vent-&amp;-Temp&#233;rature">Vent &amp; Temp&#233;rature<a class="anchor-link" href="#Vent-&amp;-Temp&#233;rature">&#182;</a></h4><p>Ces données seront pour le moment rajouter sur le .xlsx à la main, nous verrons plus loin comment automatiser cette rentrée de donnée via une API</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/10.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Malgré la faible quantité de données que nous possédons pour le moment, la matrice de corrélation montre quand même une certaine corrélation entre nos attributs</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/corr.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Et grâce à ce schéma là on peut distinguer un léger changement de la qualité de l'air en fonction de la force du vent</strong><br>
-On peut donc supposer que la ou la droite est croissante, les quartiers sont alignés par rapport à la direction moyenne du vent ou très proche.<br>
-<strong>On peut aussi l’observer clairement grâce au heatmap suivant</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/6.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-<span class="n">dataScal2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ScalairNum.csv&#39;</span><span class="p">)</span>
-<span class="n">dataScal2_df_Pivot</span> <span class="o">=</span> <span class="n">dataScal2_df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s1">&#39;indice&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;nom&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;direction&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">dataScal2_df_Pivot</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.5&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlGn_r&quot;</span><span class="p">)</span>
-<span class="c1"># To display the heatmap </span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_text output_subarea ">
-<pre>&lt;Figure size 1400x700 with 2 Axes&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Des-informations-plus-pr&#233;cises">Des informations plus pr&#233;cises<a class="anchor-link" href="#Des-informations-plus-pr&#233;cises">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Le graphique 3D, de la librairie Plotly, permet une meilleur compréhension de ces données et surtout, il permet d'observer le lien entre plus de donnée à la fois.</strong><br>
-<a href="#Graphique-3D-avec-Plotly">lien de l'annexe</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Premier-model-de-pr&#233;diction-avec-Orange">Premier model de pr&#233;diction avec Orange<a class="anchor-link" href="#Premier-model-de-pr&#233;diction-avec-Orange">&#182;</a></h2><p>Orange est un logiciel fournit avec la suite Anaconda3 qui permet de créer facilement des modèles de prédiction et de visualiser des données. C'est un logiciel utilisable par quiconque, même ceux qui ne savent pas coder.</p>
-<p><img src="Images/Capture10.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-Tree">Model Tree<a class="anchor-link" href="#Model-Tree">&#182;</a></h3><p>Premièrement avant d'attaquer quoi que ce soit, il faut être bien sûr de savoir faire la différence entre modèle de régression et modèle de classification.
-Tout d'abord un modèle statistique est un algorithme qui va pouvoir prendre en entrée un jeu de donnée avec une cible ( qui est une variable du jeu de donnée ) et qui va pouvoir s’entraîner sur d'autre donnée afin de pouvoir à l'avenir prédire ou classifier le plus précisément possible cette cible avec des paramètres donnés.</p>
-<p>Les problèmes de classement consistent à prédire les classes ou étiquettes d'un ensemble de données à partir d'une base d'apprentissage pré-étiquetée.</p>
-<p>Pour la régression, il n'y a pas d'ambiguïté : il s'agit de prédire des valeurs numériques continues pour un ensemble de données à partir d'une base d'apprentissage.</p>
-<p>Le modèle Tree est un modèle de classification, l’objectif de notre arbre de décision est donc de classer les couleurs en 3 classes en fonction de leur indice ATMO. A chaque étape, l’algorithme va chercher le critère permettant de séparer au mieux ces 2 populations. Il existe plusieurs critères de séparation, ici la force du vent ainsi que se direction. Dans notre exemple nous allons utiliser l’entropie.</p>
-<p>On aurait pu ici prendre un modèle de régression ( comme la régression logistique qui est assez précise dans notre cas ) mais, grâce à orange, nous avons pu comparer la précision entre les différents modèles et le modèle "Tree" est dans les plus précis, mais surtout il est le plus représentatif, notamment avec la possibilité d'affiché un arbre de prédiction.</p>
-<p><img src="Images/Capture9.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Sch&#233;ma-Model-Tree">Sch&#233;ma Model Tree<a class="anchor-link" href="#Sch&#233;ma-Model-Tree">&#182;</a></h4><p>Nous avons donc choisi de baser notre modèle sur la cible "color" qui départage donc les indices en 3 catégories : green, yellow and red. Après avoir tester avec les indices seul, nous nous sommes rendu compte que la précision était bien plus élevée avec un choix de possibilité plus restreint.</p>
-<p><img src="Images/Capture8.png" alt=""></p>
-<p><img src="Images/Capture7.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-Logistic-Regression">Model Logistic Regression<a class="anchor-link" href="#Model-Logistic-Regression">&#182;</a></h3><p>Ce modèle est à peine plus précis que celui de "Tree" et ça représentation graphique sur Orange est différente. Elle permet de choisir une "target class" donc soit GREEN, YELLOW ou RED et de faire varier nos paramètres pour observer le pourcentage de chance qu'on a d'avoir cette couleur.
-Par exemple on peut savoir la probabilité d'avoir un indice dit "RED" sachant qu'on a un vent d'une forceMax supérieur à 11 noeuds, une direction entre Sud SudEst et ceux pour le quartier de Montravel :</p>
-<p><img src="Images/Capture6.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Il est notable, que ce soit pour les modèles Orange ou directement crée en python avec Scikit-Learn, que les modèles peuvent être enregistrés en un fichier particulier et ré-ouvert par la suite dans un nouveau programme, ce que nous verrons dans une autre partie.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Recuperation-de-la-donn&#233;e-&#224;-l'aide-d'une-API-REST">Recuperation de la donn&#233;e &#224; l'aide d'une API REST<a class="anchor-link" href="#Recuperation-de-la-donn&#233;e-&#224;-l'aide-d'une-API-REST">&#182;</a></h2><p>Comme énoncé dans le sujet du stage, la donnée de Scal'Air est accessible via une <a href="https://www.comprendre-internet.com/Qu-est-ce-qu-une-API-REST-ou-RESTful.html">API REST</a> sur <a href="https://rapidapi.com/adriens/api/scalair-nc">Rapide API</a>.
-Il nous a donc suffit d'utiliser une requête http en pyton pour récupérer la donnée chaque jours. Au début du stage, nous disposions de seulement 2 mois de données, que nous avons donc rempli petit à petit grâce à cette API.
-Grâce à cette requête HTTP, nous récupérons donc de la donnée sous forme de JSON, il nous à donc fallu la traiter et l'enrichir.
-Pour l'enrichir, nous avons donc utilisé une API (rest) d'Open Weather Map disponible aussi sur <a href="https://rapidapi.com/community/api/open-weather-map">RapidAPI</a>.</p>
-<p>Avec cet ensemble de donnée récupérée, il nous restait donc juste à assembler le tout et traiter un peu les formats de ces données. Rien de plus simple à faire que ça si l'on est équipé des librairies python : pandas et numpy.</p>
-<p><img src="Images/HTTPREQUEST.png" alt=""></p>
-<p><img src="Images/Normalis.png" alt=""></p>
-<p><img src="Images/Capture5.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Suite-de-l'Analyse-des-donn&#233;es-de-Scal'Air">Suite de l'Analyse des donn&#233;es de Scal'Air<a class="anchor-link" href="#Suite-de-l'Analyse-des-donn&#233;es-de-Scal'Air">&#182;</a></h2><p>Avec ces données supplémentaire nous avons pu observer de nouvelles informations et valider ou non des hypothèses faîtes précédemment.
-On observe à l'aide de nombreux schéma seaborn ou matplotlib que la direction du vent et corrélé avec sa force</p>
-<p><img src="Images/RegVentDirec.png" alt=""></p>
-<p>De plus on voit aussi que l'indice ATMO est corrélé avec la direction, ce qui semple tout à fait logique compte tenu de la géolocalisation des quartiers étudiés.</p>
-<p><img src="Images/secondDirectionAnalyse.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Par exemple nous pouvons émettre l'hypothèse que lorsque le vent vient du NE ou du N, le vent est souvent très faible, ce qui, si l'on part du principe que le principale pollueur de l'air sur Nouméa est la SLN, semble très plausible. Le vent ne portant pas les particules au loin, celles ci resteraient donc aux alentours de la SLN et donc de Montravel.
-Pour ce qui est de l'augmentation de l'indice ATMO pour les quartier Faubourg Blanchot et Montravel lors des vents venant d'Ouest et du SudOuest, ces derniers étant généralement assez élevés, il se pourrait que la pollution venue de la SLN soit répendu sur Montravel ainsi qu'au Faubourg Blanchot.
-Après toutes ces spéculations ne sont qu'hypothèse, en effet, notre jeu de données et encore très mince, ce qui ne nous permet en aucun cas d'avancer des certitudes.
-Nous avions aussi, lorsque nous avions que les deux premiers mois de données, avancé l'hypothèse qu'il pouvait se passer des activités particulière à la SLN suivant les jours. Et notre premier schéma nous l'exposé bien, en effet l'indice ATMO était plus élevé en moyenne le vendredi. Mais grâce aux nouvelles données rentrées via l'API, le nouveau schéma désapprouve cette hypothèse.</p>
-<h3 id="Toujours-plus-de-donn&#233;es">Toujours plus de donn&#233;es<a class="anchor-link" href="#Toujours-plus-de-donn&#233;es">&#182;</a></h3><p>Grace à certaines connaissances, nous avons pu récupérer les données de Scal'Air depuis 2008, ce qui à pu nous permettre de refaire tous nos graphes d'observation avec cette nouvelle donnée pour pouvoir valider ou non nos hypothèses. Ce que nous pouvons en déduire c'est que ces données sont très aléatoire et ne sont pas vraiment corrélé avec le vent et sa direction. Ceci pourrait aussi s'expliquer par notre moyen de récupération des données météorologiques. En effet la seule API trouvé qui permettait d’obtenir l'historique météorologique depuis 2008 nous donnait seulement la moyenne de la direction et de la force du vent par jour.
-Mais sans se pencher sur cette erreur possible, nos nouveaux graphes nous démontre que non seulement notre hypothèse du jour de la semaine plus pollué que les autres est faux et surtout que ce n'est pas seulement la SLN qui pollue.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/Capture4.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>En effet ce graphe nous montre bien que lorsque le vent est Sud / SudEst la pollution est plus élevée à Montravel certes, mais aussi sur l'Anse Vata, qui est pourtant dans la direction opposé à la SLN. Ce que nous pouvons en déduire c'est que, lors de vent Sud / SudEst, où le vent est souvent plus fort, la pollution pourrait venir d’ailleurs, comme d'Australie ou de Nouvelle Zélande.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cr&#233;ation-d'une-API-REST">Cr&#233;ation d'une API REST<a class="anchor-link" href="#Cr&#233;ation-d'une-API-REST">&#182;</a></h2><p>Le principe de base de cette API est donc, suivant des paramètres passé lors de la requête HTTP (force du vent / direction du vent / lieu), de nous retourner une prédiction de l'indice ATMO.
-En testant la création d'un modèle sur orange et de son exportation, nous n'avons pas réussi à réutiliser se modèle en python, alors nous nous somme penché sur la question. Et nous avons décidé de créer notre propre modèle en python à l'aide de Scikit-Learn. Malgré la quantité de données récoltées assez importante, notre modèle de prédiction, qu'il soit de classification ou de régression, n'était pas du tout précis (Précision = 0,6). Mais nous l'avons quand même utilisé pour travailler sur le principe, qui sera reproductible avec un modèle plus précis si un jours nous en avons un, ou sur un jeu de donnée différent. Malgré tout, nous arrivons quand même à générer un modèle d'une précision de 0,86 mais sur une cible qui est la "color" (un intervalle d'indices). Le problème étant que pour la démo, ce modèle ne retourne que "GREEN".</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/Capture3.png" alt=""></p>
-<p><img src="Images/Capture2.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Pour en revenir a la création de notre API REST, nous avons simplement dans un code python importé un modèle déjà créé et entraîné auparavant.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/savModelJup.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Au final, il s'agit d'un script python qui utilise la librairie Flask, qui permet simplement d'assigner une réponse à une requête http. En plus de ça il nous a suffi de créer une classe ayant pour attribut nos paramètres du modèle (wind / place / direction) et important le modèle.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/classPrev.png" alt=""></p>
-<p><img src="Images/returnJson.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Et retournant sa réponse en Json.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Une fois ce Script Python lancé, il nous suffit d'ouvrir sur un navigateur le lien local host sur le port 5000 ainsi que les compléments d'URL et les paramètres pour obtenir une prédiction et le Json renvoyé par le programme. Mais le but ne s’arrête pas la, ce que nous voulons c'est que cette API tourne h24 et que quiconque puisse y avoir accès et par n'importe quel moyen. Pour cela, nous avons du déployer cette API dans le cloud via heroku, puis sur un market place grâce à Rapide Api. Et nous avons aussi tester de récupérer les données en Java.</p>
-<h3 id="Heroku-&amp;-RapidAPI">Heroku &amp; RapidAPI<a class="anchor-link" href="#Heroku-&amp;-RapidAPI">&#182;</a></h3><p>Heroku est donc une plateforme en ligne (une PAAS) permettant d'héberger gratuitement des API. Pour publier la notre, à l'aide du CLI fournit par heroku sous linux, il nous a juste suffi de Dockeriser notre environnement et de créer un fichier requirement.txt qui indique toutes les dépendances de notre script python.
-Une fois nos fichiers envoyé sur heroku, et après maintes phases de test, notre api était disponible via une URL publique. Le travail restant était juste de publier ce lien sur Rapide Api et de documenter un peu notre API en y montrant des exemples.
-Finalement, grâce à un programme java, nous arrivons à récupérer notre prédiction et cela de n'importe où. De plus Rapide Api propose des exemples de code pour l'utilisation de l'api.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Code Java :</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/Capture1.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Réponse du Java :</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/resJavaRequestApi.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Un-tout-nouvel-horizon-et-de-nouvelles-donn&#233;es">Un tout nouvel horizon et de nouvelles donn&#233;es<a class="anchor-link" href="#Un-tout-nouvel-horizon-et-de-nouvelles-donn&#233;es">&#182;</a></h2><p>Après cet entraînement sur les données de Scal'Air et un processus bien rodé, nous pouvons maintenant s'attaquer à un exemple possiblement utile à l'OPT, le temps d'attente dans les Agences OPT
+<h2 id="Un-tout-nouvel-horizon-et-de-nouvelles-donn&#233;es">Un tout nouvel horizon et de nouvelles donn&#233;es<a class="anchor-link" href="#Un-tout-nouvel-horizon-et-de-nouvelles-donn&#233;es">&#182;</a></h2><p>Après cet entraînement sur les données de Scal'Air et un processus bien rodé, nous pouvons maintenant s'attaquer à un exemple possiblement utile à l'OPT, le temps d'attente dans les Agences OPT.
 Cette donnée est récupérée grâce à un script python qui via un cron tourne toutes les 5 min et va récupérer les données grâce à une API disponible sur le site de l'OPT.
 Après un petit tri et un gros nettoyage, les données sont stockées sur un csv qui ne cesse de grossir.</p>
-<h3 id="L'utilit&#233;-possible">L'utilit&#233; possible<a class="anchor-link" href="#L'utilit&#233;-possible">&#182;</a></h3><p>Ce que l'on peut espérer de ces analyses, c'est qu'on puisse observer une régularité du temps d'attente en fonction des horaires, et du nombre de guichet ouvert, et de l'agence. Ces informations pourrait être utiles pour une réorganisation des Agences, ou bien même pour le client qui voudrait prédire, ou avoir une idée du temps à attendre pour aller déposer ou récupérer son colis/courrier/etc...</p>
+<h3 id="L'utilit&#233;-possible">L'utilit&#233; possible<a class="anchor-link" href="#L'utilit&#233;-possible">&#182;</a></h3><p>Ce que l'on peut espérer de ces analyses, c'est qu'on puisse observer une régularité du temps d'attente en fonction des horaires, et du nombre de guichet ouvert, et de l'agence. Ces informations pourraient être utiles pour une réorganisation des Agences, ou bien même pour le client qui voudrait prédire, ou avoir une idée du temps à attendre pour aller déposer ou récupérer son colis/courrier/etc...</p>
 
 </div>
 </div>
@@ -13580,7 +13212,7 @@ Autrement dit :</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Analyse-de-la-donn&#233;e">Analyse de la donn&#233;e<a class="anchor-link" href="#Analyse-de-la-donn&#233;e">&#182;</a></h3><h4 id="Netoyage">Netoyage<a class="anchor-link" href="#Netoyage">&#182;</a></h4><p>Une fois notre csv prêt à l'emploi, nous avons commencé à retravailler cette donnée en python et à afficher les premiers graphiques, le principe de nettoyage et d'amélioration de la donnée est identique aux méthodes utilisées pour le jeu de donnée Scal'Air.
+<h3 id="Analyse-de-la-donn&#233;e">Analyse de la donn&#233;e<a class="anchor-link" href="#Analyse-de-la-donn&#233;e">&#182;</a></h3><h4 id="Netoyage">Netoyage<a class="anchor-link" href="#Netoyage">&#182;</a></h4><p>Une fois notre csv prêt à l'emploi, nous avons commencé à retravailler cette donnée en python et à afficher les premiers graphiques, le principe de nettoyage et d'amélioration de la donnée est identique aux méthodes utilisées pour le jeu de donnée Scal'Air (changement des types/suppréssion de la donnée inutilisable/etc).
 A une chose près, dans ces données la, nous avons remarqué une anomalie qui revenait assez souvent.
 Le problème venait directement de la borde Esirius ou de l'agence elle même.
 En effet, de temps en temps, le temps d'attente moyen et maximum ne cessait d'augmenter et atteignait des fois des sommes folles (+7h). Nous avons donc pris la décision de supprimer toutes les lignes avec un temps d'attente moyen de plus de 2h ainsi que toutes les lignes précédentes pour la même agence et pour le même jour jusqu'à ce que l'on tombe sur un temps d'attente plus élevé.</p>
@@ -13643,7 +13275,15 @@ A contrario, la médiane nous montre aussi qu'à certaines horaires, il peut y a
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Algorithme-de-pr&#233;diction">Algorithme de pr&#233;diction<a class="anchor-link" href="#Algorithme-de-pr&#233;diction">&#182;</a></h3><p>Comme vu avec le jeu de donnée précédent, il est préférable, premièrement, de tester le validité des modèles de régression et de classification sur Orange. Comme expliqué précédemment, cette étape a était faite et couplé à l'essai de plusieurs algorithmes sur Python avec Scikit-Learn, le modèle retenu et le 'RandomForestClassifier'.
+<h3 id="Algorithme-de-pr&#233;diction">Algorithme de pr&#233;diction<a class="anchor-link" href="#Algorithme-de-pr&#233;diction">&#182;</a></h3><h4 id="Premier-model-de-pr&#233;diction-avec-Orange">Premier model de pr&#233;diction avec Orange<a class="anchor-link" href="#Premier-model-de-pr&#233;diction-avec-Orange">&#182;</a></h4><p>Orange est un logiciel fournit avec la suite Anaconda3 qui permet de créer facilement des modèles de prédiction et de visualiser des données. C'est un logiciel utilisable par quiconque, même ceux qui ne savent pas coder.</p>
+<p><img src="Images/Capture10.png" alt=""></p>
+<h4 id="Model-Tree">Model Tree<a class="anchor-link" href="#Model-Tree">&#182;</a></h4><p>Premièrement avant d'attaquer quoi que ce soit, il faut être bien sûr de savoir faire la différence entre modèle de régression et modèle de classification.
+Tout d'abord un modèle statistique est un algorithme qui va pouvoir prendre en entrée un jeu de donnée avec une cible ( qui est une variable du jeu de donnée ) et qui va pouvoir s’entraîner sur d'autre donnée afin de pouvoir à l'avenir prédire ou classifier le plus précisément possible cette cible avec des paramètres donnés.</p>
+<p>Les problèmes de classement consistent à prédire les classes ou étiquettes d'un ensemble de données à partir d'une base d'apprentissage pré-étiquetée.</p>
+<p>Pour la régression, il n'y a pas d'ambiguïté : il s'agit de prédire des valeurs numériques continues pour un ensemble de données à partir d'une base d'apprentissage.</p>
+<p>Le modèle Tree est un modèle de classification, l’objectif de notre arbre de décision est donc de classer les temps d'attente en 3 classes en fonction des minutes. A chaque étape, l’algorithme va chercher le critère permettant de séparer au mieux ces 2 populations. Il existe plusieurs critères de séparation, ici l'heure ainsi que le jour. Dans notre exemple nous allons utiliser l’entropie.</p>
+<p>On aurait pu ici prendre un modèle de régression ( comme la régression logistique qui est assez précise dans notre cas ) mais, grâce à orange, nous avons pu comparer la précision entre les différents modèles et le modèle "Tree" est dans les plus précis, mais surtout il est le plus représentatif, notamment avec la possibilité d'affichers un arbre de prédiction.</p>
+<p>Comme vu avec le jeu de donnée précédent, il est préférable, premièrement, de tester le validité des modèles de régression et de classification sur Orange. Comme expliqué ci-dessus, cette étape a était faite et couplé à l'essai de plusieurs algorithmes sur Python avec Scikit-Learn, le modèle retenu et le 'RandomForestClassifier'.
 Avec notre petit jeu de donnée, on arrive à une précision d'environ 0,84.</p>
 
 </div>
@@ -13704,8 +13344,10 @@ Nous allons encore une fois l'utiliser dans une API faite en python.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cr&#233;ation-de-l'API">Cr&#233;ation de l'API<a class="anchor-link" href="#Cr&#233;ation-de-l'API">&#182;</a></h3><p>Nous reprendrons les même étapes que pour les données de scal'Air, il suffit, grâce à python et la librairie Flask de faire un petit script important le modèle et retournant, suivant les endpoints, le json voulu.
-Une fois fait, nous reproduirons encore une fois la même méthode, autrement dis, nous publions l'API sur heroku via le CLI d'heroku et un dokerfile. Et nous ajoutons l'API sur Rapide API ainsi que sa documentation.
-Par contre, nous avons mis en place, cette fois ci, un pipeline entre heroku et la repo contenant tous les fichiers pour faire tourner l'API. Ce pipeline permet de ré upload l'API sur heroku si il survient un quelconque changement sur la repo. Ce qui nous permet de mettre continuellement le modèle à jour avec les nouvelles données qui arrivent tous les jours. C'est un déploiement continu.
+Une fois fait, nous reproduirons encore une fois la même méthode, autrement dis, nous publions l'API sur heroku via le CLI d'heroku et un dokerfile.
+Heroku est une plateforme en ligne (une PAAS) permettant d'héberger gratuitement des API. Pour publier la notre, à l'aide du CLI fournit par heroku sous linux, il nous a juste suffi de Dockeriser notre environnement et de créer un fichier requirement.txt qui indique toutes les dépendances de notre script python.
+Une fois nos fichiers envoyé sur heroku, et après maintes phases de test, notre api était disponible via une URL publique. Le travail restant était juste de publier ce lien sur Rapide Api et de documenter un peu notre API en y montrant des exemples.</p>
+<p>Par contre, nous avons mis en place, cette fois ci, un pipeline entre heroku et la repo contenant tous les fichiers pour faire tourner l'API. Ce pipeline permet de ré upload l'API sur heroku si il survient un quelconque changement sur la repo. Ce qui nous permet de mettre continuellement le modèle à jour avec les nouvelles données qui arrivent tous les jours. C'est un déploiement continu.
 Finalement, cette fois ci, nous n'essayerons pas d'appeler l'API en Java mais en PHP sur un site web.</p>
 
 </div>
@@ -13733,7 +13375,7 @@ Ce site web est donc conçus sur un modèle MVC "from scratch" et est facilement
 Ce langage permet de compiler le code sous Android et sous IOS sans aucune modification du code. De plus le framework flutter est très suivit et possède un très grand nombre de widget utilisables.
 Ce langage est un langage objet, il ma donc était assez facile de l'apprendre, sachant déjà coder en Java.
 Premièrement, l'application comprenait seulement l'affichage 'live' des temps d'attentes.</p>
-<p><img src="Images/Screenshot_2019-12-09-08-25-30-581_com.example.apirequest.jpg" alt=""></p>
+<p><img src="Images/Screenshot_2019-12-09-08-25-30-581_com.example.apirequest2.jpg" alt=""></p>
 <p><img src="Images/Screenshot_2019-12-09-08-25-49-157_com.example.apirequest.jpg" alt=""></p>
 
 </div>
@@ -13764,7 +13406,9 @@ Nous avons 3 'pageView' (3 pages avec une gestion de switch sur les cotés de l'
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>Ce stage a été très enrichissant pour moi car il m’a permis de découvrir dans le détail le monde de l'entreprise notament avec la méthode agile Scrum. De plus il m'a permis d'apprendre l'utilisation de nombreuses technologies comme évoqué dans le corps du rapport. Il m'a aussi permis de rencontrer des personnes travaillant dans le dommaines de l'informatique et de la programmation, ce qui m'a apporté une meilleure clairvoyance sur le métier que je voudrais exercer dans un futur proche. Ce stage m'a donc était très important, que ce soit pour la suite de mes études supérieurs ou pour ma future vie professionnelle.
-Il était question d'appliquer un cheminement d'utilisation de données open source, en passant par l'analyse de données, modèle prédictif, création d'api à l'utilisation de cette dernière dans un programme. Puis le sujet à était approfondi pour passer sur des données liées à l'opt et même sur la création d'un site web ainsi qu'une application mobile. Un cheminement complet accès sur l'utilisation du PAAS et du cloud, et surtout indépendant des structures interne à l'opt. Autrement dit ce stage aurait pu être fait par nimporte qui sur son canapé grâce à ses outils gratuit et cette donnée openSource.</p>
+Il était question d'appliquer un cheminement d'utilisation de données open source, en passant par l'analyse de données, modèle prédictif, création d'api à l'utilisation de cette dernière dans un programme. Puis le sujet à était approfondi pour passer sur des données liées à l'opt et même sur la création d'un site web ainsi qu'une application mobile. Un cheminement complet accès sur l'utilisation du PAAS et du cloud, et surtout indépendant des structures interne à l'opt. Autrement dit ce stage aurait pu être fait par nimporte qui sur son canapé grâce à ses outils gratuit et cette donnée openSource.
+Et pour finir, n'oublions pas que ce rapport de stage, qu'il soit sous forme de pdf ou html, a était généré en Latext grâce à du Markdown sous Jupyter NoteBook. Ce qui explique les quelques problèmes d'affichage sous la version pdf, (le htm est beaucoup plus esthétique.</p>
+<hr>
 
 </div>
 </div>
@@ -13987,8 +13631,8 @@ Dans le cadre d'un modèle linéaire simple, on peut représenter graphiquement 
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">linear_model</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
 <span class="c1"># Load the diabetes dataset</span>
 <span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
 <span class="c1"># Use only one feature</span>
@@ -14150,48 +13794,12 @@ Variance score: 0.47
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Graphiques,-Premi&#232;res-analyses">Graphiques, Premi&#232;res analyses<a class="anchor-link" href="#Graphiques,-Premi&#232;res-analyses">&#182;</a></h2><p><a href="#Première-observations">lien de la partie principale</a></p>
-<p><img src="Images/1.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="Images/2.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Graphique-3D-avec-Plotly">Graphique 3D avec Plotly<a class="anchor-link" href="#Graphique-3D-avec-Plotly">&#182;</a></h2><p><a href="#Des-informations-plus-précises">lien de la partie principale</a></p>
-<p><strong>Le graphique 3D, de la librairie Plotly, permet une meilleur compréhension de ces données et surtout, il permet d'observer le lien entre plus de données à la fois</strong></p>
-<p><img src="Images/7.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Comme par exemple le nombre de fois ou un certain indice à était calculé par quartier :</strong></p>
-<p><img src="Images/8.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="R&#233;cup&#233;ration-de-la-donn&#233;e-du-temps-d'attente">R&#233;cup&#233;ration de la donn&#233;e du temps d'attente<a class="anchor-link" href="#R&#233;cup&#233;ration-de-la-donn&#233;e-du-temps-d'attente">&#182;</a></h2><p><a href="#Récupération-de-la-donnée">lien vers la partie principale</a></p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">http.client</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">pandas.io.json</span> <span class="kn">import</span> <span class="n">json_normalize</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">gmtime</span><span class="p">,</span> <span class="n">strftime</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -14223,7 +13831,7 @@ Variance score: 0.47
         <span class="n">normalize</span><span class="p">[</span><span class="s1">&#39;MAXWaintingTime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jsonN</span><span class="p">[</span><span class="s1">&#39;hits&#39;</span><span class="p">][</span><span class="s1">&#39;hits&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;_source&#39;</span><span class="p">][</span><span class="s1">&#39;borneEsirius&#39;</span><span class="p">][</span><span class="s1">&#39;realMaxWaitingTime&#39;</span><span class="p">])</span>
         <span class="c1">#normalize[&#39;UPD&#39;].append(jsonN[&#39;hits&#39;][&#39;hits&#39;][i][&#39;_source&#39;][&#39;updatedEsiriusDate&#39;])</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An exception occurred, no borneEsurius for the &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; station&quot;</span><span class="p">)</span> 
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;An exception occurred, no borneEsurius for the &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; station&quot;</span><span class="p">)</span> 
         <span class="n">normalize</span><span class="p">[</span><span class="s1">&#39;AVGWaintingTime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">normalize</span><span class="p">[</span><span class="s1">&#39;MAXWaintingTime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="c1">#normalize[&#39;UPD&#39;].append(&#39;null&#39;)</span>
@@ -14235,21 +13843,21 @@ Variance score: 0.47
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;OPTWaitingTime.csv&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;OPTWaitingTime.csv is here !&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;OPTWaitingTime.csv is here !&#39;</span><span class="p">)</span>
     <span class="c1">#data[data==&quot;&quot;] &lt;- NA</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>      
+    <span class="n">res</span> <span class="o">=</span> <span class="bp">False</span>      
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Point break&quot;</span><span class="p">)</span>
-            <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Point break&quot;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="k">break</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no file OPTWaintingTime.csv&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;no file OPTWaintingTime.csv&quot;</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;OPTWaitingTime.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;OPTWaitingTime.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;OPTWaitingTime.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;OPTWaitingTime.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14332,23 +13940,10 @@ A contrario, la médiane nous montre aussi qu'à certaines horaires, il peut y a
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="T&#233;l&#233;charger-l'app">T&#233;l&#233;charger l'app<a class="anchor-link" href="#T&#233;l&#233;charger-l'app">&#182;</a></h4><p><img src="Images/app/qr-code30.png" alt=""></p>
+<h4 id="T&#233;l&#233;charger-l'app">T&#233;l&#233;charger l'app<a class="anchor-link" href="#T&#233;l&#233;charger-l'app">&#182;</a></h4><p><img src="Images/app/qr-code(30" alt="">.png)</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
